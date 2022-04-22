@@ -29,7 +29,7 @@ public class HomePage extends BasePage{
         Driver.get().manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(homeGirisYapIcon).perform();
-        Driver.get().manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        Driver.get().manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         homeGirisYapBtn.click();
     }
 

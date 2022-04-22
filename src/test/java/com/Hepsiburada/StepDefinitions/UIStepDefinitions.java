@@ -4,7 +4,6 @@ import com.Hepsiburada.Pages.HomePage;
 import com.Hepsiburada.Pages.LoginPage;
 import com.Hepsiburada.Utilities.ConfigurationReader;
 import com.Hepsiburada.Utilities.Driver;
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

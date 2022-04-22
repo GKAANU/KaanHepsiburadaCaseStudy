@@ -18,7 +18,7 @@ public class Hooks {
      */
     @Before
     public void setUp(Scenario scenario) {
-        if (scenario.getName().contains("sayfasındaki bankanın eşleşmesi")) {
+        if (scenario.getName().contains("Hepsiburada UI Test")) {
             // we need driver only for the UI test
             Driver.get().manage().window().maximize();
             Driver.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -39,12 +39,12 @@ public class Hooks {
     @After
     public void tearDown(Scenario scenario) {
         // capture screenshot and close driver only for UI tests
-        if (scenario.getName().contains("sayfasındaki bankanın eşleşmesi")) {
+        if (scenario.getName().contains("Hepsiburada UI Test")) {
             if (scenario.isFailed()) {
                 final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
                 scenario.attach(screenshot, "image/png", "screenshot");
             }
-               Driver.closeDriver();
+//               Driver.closeDriver();
         }
 
     }
