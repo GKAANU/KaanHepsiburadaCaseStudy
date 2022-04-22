@@ -25,6 +25,19 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//div[text()='ARA']")
     public WebElement aramaBtn;
 
+    @FindBy(xpath = "//button[@data-test-id='product-info-button']")
+    public WebElement sepeteEkleBtn;
+
+    @FindBy(xpath = "(//div[@data-test-id='review'])[2]")
+    public WebElement aramadakiIkinciUrun;
+
+    @FindBy(id = "cartItemCount")
+    public WebElement sepetimBtn;
+
+    /**
+     * Methods
+     */
+
     public void girisYapSafyasınaGit(){
         Driver.get().manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         Actions actions = new Actions(Driver.get());

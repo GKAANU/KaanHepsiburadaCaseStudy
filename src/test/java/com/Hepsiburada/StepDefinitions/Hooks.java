@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class Hooks {
 
     /**
-     * These lines will be executed before every test
+     * Bu satırlar her test adımından önce uygulanır
      */
     @Before
     public void setUp(Scenario scenario) {
@@ -24,17 +24,12 @@ public class Hooks {
             Driver.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         }
 
-        if (scenario.getName().contains("Geocode reverse geocoding test for")) {
-            // we need baseURI only for the API test
-            RestAssured.baseURI = ConfigurationReader.get("api_url");
-        }
     }
 
     /**
-     * These lines will be executed after every test
-     * Screenshot will be captured if the scenario fails
+     * Bu satırlar her test adımı bittikten sonra uygulanır
+     * Senaryo başarısız olursa ekran görüntüsü alıp "target/default-html-reports" içerisine png formatında gönderir
      *
-     * @param scenario
      */
     @After
     public void tearDown(Scenario scenario) {
@@ -44,7 +39,7 @@ public class Hooks {
                 final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
                 scenario.attach(screenshot, "image/png", "screenshot");
             }
-//               Driver.closeDriver();
+               Driver.closeDriver();
         }
 
     }

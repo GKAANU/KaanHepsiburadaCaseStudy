@@ -25,6 +25,10 @@ public class LoginPage extends HomePage{
     @FindBy(id = "btnEmailSelect")
     public WebElement loginSifreGirisYapBtn;
 
+    /**
+     * Methods
+     */
+
     public void girisYap(String username, String password){
         Driver.get().manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         epostaKutusu.sendKeys(username);

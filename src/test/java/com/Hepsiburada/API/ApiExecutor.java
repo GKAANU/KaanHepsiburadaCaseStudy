@@ -9,6 +9,10 @@ import java.util.List;
 
 public class ApiExecutor {
 
+    /**
+     * Methods
+     */
+
     public static Pet initializePet(String animalCategory, String animalName, String animalTag){
         Pet myPet = new Pet();
         Tag tag = new Tag();
