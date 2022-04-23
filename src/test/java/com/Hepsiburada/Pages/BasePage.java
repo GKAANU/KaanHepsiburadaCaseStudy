@@ -22,6 +22,6 @@ public abstract class BasePage {
     public void sayfaKontrol(String sayfaAdi){
         Driver.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         String title = Driver.get().getTitle();
-        Assert.assertTrue(title.toLowerCase().contains(sayfaAdi));
+        Assert.assertTrue(title.toLowerCase().contains(sayfaAdi.toLowerCase()));
     }
 }

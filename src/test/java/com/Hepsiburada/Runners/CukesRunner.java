@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports"},
         features = "src/test/resources/Features",
         glue = "com/Hepsiburada/StepDefinitions",
-        dryRun = true,
+        dryRun = false,
         tags = "@UITest"
 )
 public class CukesRunner {
